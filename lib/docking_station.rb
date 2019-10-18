@@ -18,6 +18,10 @@ class DockingStation
   end
 
   def dock_bike(bike_name)
-    docked_bikes.push(bike_name)
+    if @docked_bikes.count >= 5
+      raise 'station full'
+    else
+      docked_bikes.push(bike_name)
+    end
   end
 end

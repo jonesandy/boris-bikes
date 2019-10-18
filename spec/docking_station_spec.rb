@@ -13,20 +13,24 @@ describe DockingStation do
   end
 
   it "should accept a argument" do
-    station = DockingStation.new
-    expect { station.dock_bike( :argument ) }.to_not raise_error
+    expect { subject.dock_bike( :argument ) }.to_not raise_error
   end
 
   it "does dock_bike return argument passed to it" do
-    station = DockingStation.new
     bike = Bike.new
-    station.dock_bike(bike)
-    expect(station.docked_bikes).to include(bike)
+    subject.dock_bike(bike)
+    expect(subject.docked_bikes).to include(bike)
   end
 
   it 'does not release a bike when dock is empty' do 
-    station = DockingStation.new
     bike = Bike.new
-    expect { station.release_bike }.to raise_error 'no bikes available'
+    expect { subject.release_bike }.to raise_error 'no bikes available'
+  end
+
+  it 'raises error when full' do
+    5.times do 
+      subject.dock_bike(Bike.new)
+    end
+    expect{ subject.dock_bike(Bike.new) }.to raise_error 'station full' 
   end
 end
