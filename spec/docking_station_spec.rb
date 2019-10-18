@@ -28,9 +28,7 @@ describe DockingStation do
   end
 
   it 'raises error when full' do
-    5.times do 
-      subject.dock_bike(Bike.new)
-    end
+    20.times { subject.dock_bike(Bike.new) } 
     expect{ subject.dock_bike(Bike.new) }.to raise_error 'station full' 
   end
 end
