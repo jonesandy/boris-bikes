@@ -2,16 +2,11 @@ require 'docking_station'
 
 describe DockingStation do
 
-  it { is_expected.to respond_to :release_bike }
 
   it 'releases working bikes' do
-    bike = subject.release_bike
+    bike = Bike.new
     expect(bike).to be_working
   end
-
-  it { is_expected.to respond_to :dock_bike }
-
-  it { is_expected.to respond_to :docked_bikes }
 
   it "docked bikes" do
     expect(subject.docked_bikes).to be_a(Array)
@@ -29,4 +24,9 @@ describe DockingStation do
     expect(station.docked_bikes).to include(bike)
   end
 
+  it 'does not release a bike when dock is empty' do 
+    station = DockingStation.new
+    bike = Bike.new
+    expect { station.release_bike }.to raise_error 'no bikes available'
+  end
 end
