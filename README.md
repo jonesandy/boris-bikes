@@ -9,3 +9,9 @@ To run tests you will need RSpec gem installed:
 ```
 $ gem install rspec
 ```
+
+## Process
+
+This challenge was tackled using the TDD method. All code was written test first. This means before writing any production code I had to create a test to justify it. Once I had a failing test that tested for a behaviour I could then write code to make that test pass.    
+Completed using the **RED** - **GREEN** - **REFACTOR** cycle.
+
