@@ -4,14 +4,30 @@ A project to emulate the TfL cycle hire network. The program will emulate all th
 
 ## Dependancies
 
-To run tests you will need RSpec gem installed:
+Installation.
 
+```bash
+# Clone repository
+git clone
+
+# change into root folder
+cd boris-bikes
+
+# install dependancies
+bundle install
 ```
-$ gem install rspec
+
+To run tests, chance into root folder, then run rspec.
+
+```bash
+rspec
 ```
 
 ## Process
 
-This challenge was tackled using the TDD method. All code was written test first. This means before writing any production code I had to create a test to justify it. Once I had a failing test that tested for a behaviour I could then write code to make that test pass.    
+This challenge was tackled using the TDD method. All code was written test first. This means before writing any production code I had to create a test to justify it. Once I had a failing test that tested for a behaviour I could then write code to make that test pass. 
+   
 Completed using the **RED** - **GREEN** - **REFACTOR** cycle.
+
+Initial domain modelling done and shown [here](domain-model.md).
 
